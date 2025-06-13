@@ -165,7 +165,7 @@ if hasattr(st.session_state, 'has_generated_image') and st.session_state.has_gen
         with col2:
             # GitHub upload button if credentials provided
             if github_token and repo_owner and repo_name:
-                if st.button("🚀 Upload to GitHub", type="secondary", use_container_width=True):
+                if st.button("🚀 Upload to GitHub and get URL", type="secondary", use_container_width=True):
                     with st.spinner("Uploading to GitHub..."):
                         github_path = f"generated_images/{st.session_state.filename}"
                         public_url = upload_to_github(st.session_state.result_img, github_token, repo_owner, repo_name, github_path)
